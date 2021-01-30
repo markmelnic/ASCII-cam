@@ -11,10 +11,10 @@ BG_CODE = 0 # black
 FACE_CASCADE = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 def face_focus(img):
-    # Detect the faces
+    # detect faces
     faces = FACE_CASCADE.detectMultiScale(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 1.1, 4)
 
-    # Focus on face
+    # focus on the face
     x, y, w, h = faces[0]
     img = img[y:y+h, x:x+w]
 
