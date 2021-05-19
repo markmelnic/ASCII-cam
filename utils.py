@@ -8,24 +8,6 @@ LONG_CHAR_LIST = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1\{\}[]?-_+~<>i!l
 BG_CODE = 255 # white
 BG_CODE = 0 # black
 
-FACE_CASCADE = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-def face_focus(img):
-    # detect faces
-    faces = FACE_CASCADE.detectMultiScale(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 1.1, 4)
-
-    # focus on the face
-    x, y, w, h = faces[0]
-    img = img[y:y+h, x:x+w]
-
-    '''
-    # Draw the rectangle around each face
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-    '''
-
-    return img
-
 def aschier(img):
     SCALE = 1
     NUM_COLS_RESOLUTION = 200
